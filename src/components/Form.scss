@@ -1,0 +1,56 @@
+$primary: rgba(87, 7, 55, 1);
+$secondary: aliceblue;
+
+$third: black;
+
+.formContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $secondary;
+  gap: 1rem;
+  .form {
+    width: calc(100% / 3);
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3rem;
+
+    input {
+      color: $secondary;
+      background-color: inherit;
+      width: 100%;
+      //   padding: 0.6rem;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $secondary;
+
+      font-size: 1.1rem;
+    }
+    button {
+      align-self: center;
+      margin-top: 2rem;
+      width: max-content;
+      padding: 0.5rem 1.7rem;
+      border-radius: 5px;
+      border: none;
+      background-color: $primary;
+      color: $secondary;
+      font-weight: 900;
+      font-size: 1rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .account {
+    font-size: 0.9rem;
+    .navLink {
+      color: $secondary;
+    }
+  }
+}
