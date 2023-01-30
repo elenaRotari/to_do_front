@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 
-export default function useFetch(url, param = "") {
+export default function useFetch(url, triger, param = "") {
   const [data, setData] = useState({
     data: [],
     error: "",
     isPending: true,
-    filtered: [],
   });
 
   useEffect(() => {
@@ -20,7 +19,6 @@ export default function useFetch(url, param = "") {
               ...prev,
               data: json,
               isPending: false,
-              filtered: json,
             })
         )
       )
@@ -33,6 +31,6 @@ export default function useFetch(url, param = "") {
             })
         )
       );
-  }, [url, param]);
+  }, [url, param, data.triger]);
   return [data, setData];
 }

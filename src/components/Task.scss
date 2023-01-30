@@ -1,0 +1,29 @@
+$primary: rgba(87, 7, 55, 1);
+$secondary: aliceblue;
+$third: black;
+
+.task {
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  .btn1 {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      width: max-content;
+      padding: 0.5rem 0.7rem;
+      border-radius: 5px;
+      border: none;
+      background-color: $primary;
+      color: $secondary;
+      font-weight: 900;
+      font-size: 1rem;
+      box-shadow: 5px 5px 10px $third;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
