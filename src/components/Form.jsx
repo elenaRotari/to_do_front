@@ -20,7 +20,7 @@ export default function Form({ data }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:4020/users/" + data.submit, {
+    fetch("https://todoapp-ybrw.onrender.com/users/" + data.submit, {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {

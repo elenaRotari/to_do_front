@@ -13,7 +13,7 @@ export default function Tasks() {
     setAdd((prev) => (prev = { ...prev, [e.target.name]: e.target.value }));
   };
   const handleClick = () => {
-    fetch("http://localhost:4020/tasks", {
+    fetch("https://todoapp-ybrw.onrender.com/tasks", {
       method: "POST",
       body: JSON.stringify(add),
       headers: {

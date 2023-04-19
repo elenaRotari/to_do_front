@@ -5,7 +5,7 @@ export default function Footer() {
     <div className="footerContainer">
       <div className="by">
         <p>
-          Copyright @ 2022{" "}
+          Copyright © 2022{" "}
           <a href="https://www.ella-rotari.com/" target="_blank">
             Elena Rotari
           </a>
