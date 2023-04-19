@@ -8,6 +8,10 @@ $third: black;
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
+  @media (max-width: 690px) {
+    font-size: 0.7rem;
+    padding: 1rem;
+  }
 
   button {
     width: max-content;
@@ -22,8 +26,5 @@ $third: black;
     &:hover {
       cursor: pointer;
     }
-  }
-  .welcome {
-    text-align: center;
   }
 }

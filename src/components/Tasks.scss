@@ -8,10 +8,26 @@ $third: black;
     flex-direction: column;
     color: aliceblue;
     align-items: center;
-    margin-top: 10%;
+    margin-top: 5%;
     gap: 2rem;
     .lists {
       width: calc(100% / 2);
+      @media (max-width: 1200px) {
+        width: calc(100% / 1.5);
+      }
+      @media (max-width: 860px) {
+        width: calc(100% / 1.3);
+      }
+      @media (max-width: 750px) {
+        width: calc(100% / 1.2);
+      }
+      @media (max-width: 690px) {
+        width: calc(100% / 1.1);
+      }
+      @media (max-width: 630px) {
+        width: calc(100% / 1);
+      }
+
       input {
         width: 85%;
         padding: 0.7rem;
@@ -21,10 +37,16 @@ $third: black;
         outline: none;
         color: aliceblue;
         font-size: 1.2rem;
+        @media (max-width: 650px) {
+          width: 75%;
+        }
+        &::selection {
+          background-color: inherit;
+        }
       }
       .btn {
         width: max-content;
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 1rem;
         border-radius: 5px;
         border: none;
         background-color: $primary;
@@ -38,10 +60,38 @@ $third: black;
       }
       .tasksList {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: space-between;
-        margin-top: 5rem;
-        gap: 1.5rem;
+        .todoCont {
+          .todo {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 0.5rem;
+            height: 170px;
+            margin-bottom: 1rem;
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+              display: none;
+            }
+          }
+        }
+        .done {
+          padding: 3rem;
+          height: 170px;
+          display: flex;
+          flex-direction: column-reverse;
+          gap: 0.5rem;
+
+          overflow-y: scroll;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+      h2 {
+        text-align: center;
+        margin-top: 1rem;
       }
     }
   }

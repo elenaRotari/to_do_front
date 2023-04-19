@@ -2,6 +2,7 @@ import "./Navbar.scss";
 import useFetch from "../useFetch.js";
 import { useNavigate } from "react-router-dom";
 import DateTime from "./DateTime.jsx";
+import { FaSignOutAlt } from "react-icons/fa";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ export default function Navbar() {
               navigate("/");
             }}
           >
-            SignOut
+            <FaSignOutAlt />
           </button>
         </div>
       )}

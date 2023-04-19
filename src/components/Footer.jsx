@@ -5,13 +5,12 @@ export default function Footer() {
     <div className="footerContainer">
       <div className="by">
         <p>
-          Created by <span> </span>
+          Copyright @ 2022{" "}
           <a href="https://www.ella-rotari.com/" target="_blank">
-            ella-rotari
+            Elena Rotari
           </a>
         </p>
       </div>
-      <div className="year">2023</div>
     </div>
   );
 }

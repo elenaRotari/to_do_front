@@ -1,4 +1,5 @@
 import React from "react";
+import "./EditTask.scss";
 
 export default function EditTask({ id, setTasks, setShow }) {
   const handleEdit = (e) => {
@@ -18,8 +19,8 @@ export default function EditTask({ id, setTasks, setShow }) {
     });
   };
   return (
-    <div style={{ position: "absolute" }}>
-      <form onSubmit={handleEdit}>
+    <div className="edit">
+      <form onSubmit={handleEdit} className="formEdit">
         <input type="text" name="name" />
         <button>Save</button>
       </form>

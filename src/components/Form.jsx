@@ -1,7 +1,8 @@
 import Input from "./Input.jsx";
 import { useState } from "react";
-import { NavLink, useNavigate, useOutletContext } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Form.scss";
+import Error from "./Error.jsx";
 
 export default function Form({ data }) {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ export default function Form({ data }) {
       (prev) => (prev = { ...prev, [e.target.name]: e.target.value })
     );
   };
+  const [showError, setShowError] = useState({ show: false, message: "" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,15 +30,24 @@ export default function Form({ data }) {
     })
       .then((response) => response.json())
       .then((json) => {
-        switch (data.submit) {
-          case "register":
-            navigate("/");
-            break;
-          case "login":
-            navigate("/tasks");
-            break;
-          default:
-            break;
+        if (json.aprooved) {
+          switch (data.submit) {
+            case "register":
+              navigate("/");
+              break;
+            case "login":
+              navigate("/tasks");
+              break;
+            default:
+              break;
+          }
+        } else {
+          setShowError(
+            (prev) => (prev = { show: true, message: json.message })
+          );
+          setTimeout(() => {
+            setShowError((prev) => (prev = { show: false, message: "" }));
+          }, 3000);
         }
 
         setFormData(INITIAL);
@@ -55,6 +66,7 @@ export default function Form({ data }) {
           />
         ))}
         <button>{data.submit === "register" ? "SignUp" : "SignIn"}</button>
+        {showError.show && <Error message={showError.message} />}
       </form>
       <p className="account">
         {data.submit === "register"

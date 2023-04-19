@@ -9,7 +9,6 @@ function App() {
   const data = {
     login: {
       fields: {
-        firstName: "text",
         email: "email",
         password: "password",
       },
@@ -32,8 +31,8 @@ function App() {
           <Route path="" element={<Form data={data.login} />} />
           <Route path="register" element={<Form data={data.register} />} />
           <Route path="tasks" element={<Tasks data={data.login} />} />
+          <Route path="*" element={<Page404 />} />
         </Route>
-        <Route path="*" element={<Page404 />} />
       </Routes>
     </div>
   );

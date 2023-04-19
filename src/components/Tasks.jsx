@@ -46,22 +46,30 @@ export default function Tasks() {
               Add
             </button>
             <div className="tasksList ">
-              {tasks.data
-                .filter((el) => el.done)
-                .map((task, id) => (
-                  <div>
-                    <Task data={task} key={id} setTasks={setTasks} />
-                  </div>
-                ))}
-              <h4>Done Tasks</h4>
-              {tasks.data
-                .filter((el) => !el.done)
-                .map((task, id) => (
-                  <div>
-                    <Task data={task} key={id} setTasks={setTasks} />
-                  </div>
-                ))}
-              <h4>To Dos</h4>
+              <div className="todoCont">
+                <h2>To Dos</h2>
+                <div className="todo">
+                  {tasks.data
+                    .filter((el) => !el.done)
+                    .map((task, id) => (
+                      <div>
+                        <Task data={task} key={id} setTasks={setTasks} />
+                      </div>
+                    ))}
+                </div>
+              </div>
+              <div className="doneCont">
+                <h2>Done Tasks</h2>
+                <div className="done">
+                  {tasks.data
+                    .filter((el) => el.done)
+                    .map((task, id) => (
+                      <div>
+                        <Task data={task} key={id} setTasks={setTasks} />
+                      </div>
+                    ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
