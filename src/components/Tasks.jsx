@@ -7,7 +7,10 @@ import Task from "./Task.jsx";
 import "./Tasks.scss";
 
 export default function Tasks() {
-  const [tasks, setTasks] = useFetch("http://localhost:4020/tasks", false);
+  const [tasks, setTasks] = useFetch(
+    "https://todoapp-ybrw.onrender.com/tasks",
+    false
+  );
   const [add, setAdd] = useState({ name: "" });
   const handleChange = (e) => {
     setAdd((prev) => (prev = { ...prev, [e.target.name]: e.target.value }));

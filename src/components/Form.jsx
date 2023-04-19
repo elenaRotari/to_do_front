@@ -26,7 +26,7 @@ export default function Form({ data }) {
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
-      credentials: "include",
+      // credentials: "include",
     })
       .then((response) => response.json())
       .then((json) => {
