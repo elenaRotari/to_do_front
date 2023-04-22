@@ -4,7 +4,7 @@ import "./EditTask.scss";
 export default function EditTask({ id, setTasks, setShow }) {
   const handleEdit = (e) => {
     e.preventDefault();
-    fetch("https://todoapp-ybrw.onrender.com/api/tasks/" + id, {
+    fetch("http://82.165.121.189:4000/api/tasks/" + id, {
       method: "PATCH",
       body: JSON.stringify({ name: e.target[0].value }),
       headers: {

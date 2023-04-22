@@ -6,11 +6,9 @@ import { FaSignOutAlt } from "react-icons/fa";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const [name, setName] = useFetch(
-    "https://todoapp-ybrw.onrender.com/api/users/one"
-  );
+  const [name, setName] = useFetch("http://82.165.121.189:4000/api/users/one");
   const handleLogOut = (e) => {
-    fetch("https://todoapp-ybrw.onrender.com/api/users/logout", {
+    fetch("http://82.165.121.189:4000/api/users/logout", {
       method: "POST",
       headers: {
         "Content-type": "application/json; charset=UTF-8",

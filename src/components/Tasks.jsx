@@ -8,7 +8,7 @@ import "./Tasks.scss";
 
 export default function Tasks() {
   const [tasks, setTasks] = useFetch(
-    "https://todoapp-ybrw.onrender.com/api/tasks",
+    "http://82.165.121.189:4000/api/tasks",
     false
   );
   const [add, setAdd] = useState({ name: "" });
@@ -16,7 +16,7 @@ export default function Tasks() {
     setAdd((prev) => (prev = { ...prev, [e.target.name]: e.target.value }));
   };
   const handleClick = () => {
-    fetch("https://todoapp-ybrw.onrender.com/api/tasks", {
+    fetch("http://82.165.121.189:4000/api/tasks", {
       method: "POST",
       body: JSON.stringify(add),
       headers: {
