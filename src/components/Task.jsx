@@ -8,7 +8,7 @@ export default function Task({ data, setTasks }) {
   const [show, setShow] = useState(false);
 
   const handleDone = () => {
-    fetch(`https://todoapp-ybrw.onrender.com/tasks/${data._id}`, {
+    fetch(`https://todoapp-ybrw.onrender.com/api/tasks/${data._id}`, {
       method: "PATCH",
       body: JSON.stringify({ done: !data.done }),
       headers: {
@@ -22,7 +22,7 @@ export default function Task({ data, setTasks }) {
     });
   };
   const handleDelete = () => {
-    fetch(`https://todoapp-ybrw.onrender.com/tasks/${data._id}`, {
+    fetch(`https://todoapp-ybrw.onrender.com/api/tasks/${data._id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json; charset=UTF-8",

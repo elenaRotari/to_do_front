@@ -20,13 +20,13 @@ export default function Form({ data }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://todoapp-ybrw.onrender.com/users/" + data.submit, {
+    fetch("https://todoapp-ybrw.onrender.com/api/users/" + data.submit, {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
-      // credentials: "include",
+      credentials: "include",
     })
       .then((response) => response.json())
       .then((json) => {
